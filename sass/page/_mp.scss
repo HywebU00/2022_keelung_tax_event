@@ -34,8 +34,15 @@
     margin-left: 0;
     width: 100%;
   }
+  .slick-list {}
   .img-container {
     @include aspect-ratio(780, 436);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+    img {
+      display: block;
+    }
   }
 }
 
@@ -349,31 +356,29 @@
       }
       .prize {
         margin: 6px;
-        a {
+        display: block;
+        background: #F0FAFB;
+        border-radius: 18px;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0px 0px 12px rgba(66, 232, 224, 0.3);
+        &:before {
+          content: "";
           display: block;
-          background: #F0FAFB;
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          top: 0;
+          right: 0;
           border-radius: 18px;
-          position: relative;
-          overflow: hidden;
-          box-shadow: 0px 0px 12px rgba(66, 232, 224, 0.3);
+          box-shadow: 0 0 0 2px #152c66 inset;
+          z-index: 9;
+        }
+        &:hover,
+        &:focus {
+          box-shadow: 0px 0px 12px rgba(255, 255, 255, 0.3);
           &:before {
-            content: "";
-            display: block;
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            top: 0;
-            right: 0;
-            border-radius: 18px;
-            box-shadow: 0 0 0 2px #152c66 inset;
-            z-index: 9;
-          }
-          &:hover,
-          &:focus {
-            box-shadow: 0px 0px 12px rgba(255, 255, 255, 0.3);
-            &:before {
-              box-shadow: 0 0 0 2px #42E8E0 inset;
-            }
+            box-shadow: 0 0 0 2px #42E8E0 inset;
           }
         }
         .prize_pic {
